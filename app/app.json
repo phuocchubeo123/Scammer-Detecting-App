@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "anti-scammer",
+    "slug": "anti-scammer",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "anti-scammer"
+}

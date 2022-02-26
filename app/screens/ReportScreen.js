@@ -19,6 +19,10 @@ import { Entypo } from '@expo/vector-icons';
 const PhoneScreen = (props) => {
   const [image, setImage] = useState(null);
   const [tapped, setTapped] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [result, setResult] = useState(false);
+  const [text, setText] = useState('');
+  const [number, setNumber] = useState('');
   const uploadImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -52,15 +56,14 @@ const PhoneScreen = (props) => {
         <Text
           style={{
             marginTop: 5,
-            marginBottom: 20,
+            marginBottom: 0,
             marginLeft: 10,
             color: '#474747',
           }}
         >
-          Input a suspected number, we will check if that phone number is from a
-          scammer.
+          Report your confirmed scam phone number/link below:
         </Text>
-        <Text
+        {/* <Text
           style={{
             color: '#474747',
             marginLeft: 10,
@@ -72,10 +75,11 @@ const PhoneScreen = (props) => {
         <Text style={{ fontStyle: 'italic', marginLeft: 10 }}>
           We will query the phone number in our report database, contributed by
           our app’s user community.
-        </Text>
-
+        </Text> */}
         <Text style={{ marginLeft: 10, marginTop: 30 }}>Phone number: </Text>
         <TextInput
+          onChangeText={(newNumber) => setNumber(newNumber)}
+          defaultValue={number}
           style={{
             marginHorizontal: 10,
             height: 40,
@@ -85,12 +89,30 @@ const PhoneScreen = (props) => {
             marginTop: 5,
           }}
         ></TextInput>
+        <Text style={{ marginLeft: 10, marginTop: 30 }}>Detail: </Text>
+        <TextInput
+          underlineColorAndroid='transparent'
+          multiline={true}
+          onChangeText={(newText) => setText(newText)}
+          defaultValue={text}
+          style={{
+            marginHorizontal: 10,
+            height: 120,
+            borderStyle: 'dotted',
+            borderWidth: 1,
+            borderRadius: 1,
+            textAlignVertical: 'top',
+            marginTop: 5,
+          }}
+        ></TextInput>
         <View style={{ marginTop: 40 }}>
           <TouchableOpacity
-            onPress={() =>
+            onPress={() => {
+              setText('');
+              setNumber('');
               Alert.alert(
-                'Scam!',
-                'This phone number/link is likely to be a scam, as it was reported in our database.',
+                'Thank you!',
+                'Thank you very much. Your valued contributed data will be processed, before being putted to our database to help other users prevent scammers.',
                 [
                   //   {
                   //     text: 'Cancel',
@@ -99,8 +121,8 @@ const PhoneScreen = (props) => {
                   //   },
                   { text: 'OK', onPress: () => console.log('OK Pressed') },
                 ]
-              )
-            }
+              );
+            }}
             style={{
               backgroundColor: '#FF6F61',
               height: 40,
@@ -116,42 +138,9 @@ const PhoneScreen = (props) => {
                 fontWeight: 'bold',
               }}
             >
-              Search for possible scam
+              Submit report
             </Text>
           </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            marginTop: 30,
-            marginLeft: 10,
-          }}
-        >
-          {/* <Text style={{ fontWeight: 'bold', fontSize: 17 }}>Result</Text>
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginBottom: 8,
-              marginTop: 5,
-            }}
-          /> */}
-
-          <View>
-            {/* <Text>
-              
-              This phone number/link is likely to be a scam, as it was founded
-              in our database reported by other users.
-            </Text>
-            <Text></Text> */}
-            <Text>
-              Find out more{' '}
-              <Text
-                style={{ textDecorationLine: 'underline', color: '#0645AD' }}
-              >
-                here
-              </Text>{' '}
-            </Text>
-          </View>
         </View>
       </View>
       <View

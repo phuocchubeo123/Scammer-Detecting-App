@@ -12,6 +12,7 @@ import {
 
 import MainScreen from '../screens/MainScreen';
 import PhoneScreen from '../screens/PhoneScreen';
+import ReportScreen from '../screens/ReportScreen';
 
 const Stack = createStackNavigator();
 
@@ -38,6 +39,19 @@ function Home() {
         component={PhoneScreen}
         options={{
           title: 'Check scam phone number',
+          headerStyle: {
+            backgroundColor: '#34568B',
+            height: 120,
+          },
+          headerTintColor: 'white',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <Stack.Screen
+        name='ReportScreen'
+        component={ReportScreen}
+        options={{
+          title: 'Report scam',
           headerStyle: {
             backgroundColor: '#34568B',
             height: 120,

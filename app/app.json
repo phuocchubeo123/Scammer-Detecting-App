@@ -3,9 +3,7 @@
     "name": "anti-scammer",
     "slug": "anti-scammer",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   },
   "name": "anti-scammer"
 }

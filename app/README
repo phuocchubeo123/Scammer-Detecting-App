@@ -1,1 +1,9 @@
+This project is managed by Expo workflow, which is accompanied with an mobile app called Expo app. Please download this app first.
 
+
+Command to start the project: 
+ npm install
+ expo start
+ 
+ 
+Scan the QR code on the screen by Expo app to run the app on your phone. Please also make sure that your PC and mobile phone are connecting to the same network.

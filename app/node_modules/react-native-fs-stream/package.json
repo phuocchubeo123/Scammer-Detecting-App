@@ -1,0 +1,53 @@
+{
+	"name": "react-native-fs-stream",
+	"version": "0.0.0",
+	"description": "react-native-fs-stream",
+	"main": "index.js",
+	"keywords": [
+		"React Native",
+		"filesystem",
+		"stream"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CreatifCreateur/react-native-fs-stream.git"
+	},
+	"author": "@CreatifCreateur",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/CreatifCreateur/react-native-fs-stream/issues"
+	},
+	"homepage": "https://github.com/CreatifCreateur/react-native-fs-stream#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.11.6",
+		"@babel/core": "^7.11.6",
+		"@babel/preset-env": "^7.11.5",
+		"@babel/types": "^7.11.5",
+		"@types/jest": "^26.0.13",
+		"@types/node": "^14.10.1",
+		"@types/prettier": "^2.1.1",
+		"@types/react-native-fs": "^2.13.0",
+		"@typescript-eslint/eslint-plugin": "^4.1.1",
+		"@typescript-eslint/parser": "^4.1.1",
+		"babel-plugin-module-resolver": "^4.0.0",
+		"eslint": "^7.9.0",
+		"eslint-config-airbnb": "^18.2.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-jsx-a11y": "^6.3.1",
+		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-react": "^7.20.6",
+		"eslint-plugin-react-hooks": "^4.1.2",
+		"jest-browser-globals": "^25.1.0-beta",
+		"jest-expo": "~38.0.2",
+		"prettier": "^2.1.1",
+		"react-native-fs": "^2.16.6",
+		"ts-node": "^9.0.0",
+		"ts-transformer-keys": "^0.4.2",
+		"tsconfig-paths": "^3.9.0",
+		"typescript": "^4.0.2"
+	}
+}

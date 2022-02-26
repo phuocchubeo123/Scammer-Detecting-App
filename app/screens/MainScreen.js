@@ -11,11 +11,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import OpenApplication from 'react-native-open-application';
 import { ScrollView } from 'react-native-gesture-handler';
+import { AntDesign } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 // const ReadText = require('text-from-image');
-const MainScreen = ({ navigation }) => {
+const MainScreen = (props) => {
   const [image, setImage] = useState(null);
   const uploadImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -40,7 +41,13 @@ const MainScreen = ({ navigation }) => {
   };
 
   return (
-    <ScrollView style={styles.screen}>
+    // <View>
+    <ScrollView
+      style={styles.screen}
+      contentContainerStyle={{
+        flexGrow: 1,
+      }}
+    >
       <View style={{ marginLeft: 15, marginRight: 15 }}>
         <Text
           style={{
@@ -124,7 +131,7 @@ const MainScreen = ({ navigation }) => {
           <TouchableOpacity
             style={{
               width: '50%',
-              backgroundColor: '#34568B',
+              backgroundColor: '#FF6F61',
               borderRadius: 10,
               height: 30,
               justifyContent: 'center',
@@ -173,7 +180,7 @@ const MainScreen = ({ navigation }) => {
           <TouchableOpacity
             onPress={() => Alert.alert('Uploaded image')}
             style={{
-              backgroundColor: '#FF6F61',
+              backgroundColor: '#009B77',
               height: 40,
               justifyContent: 'center',
               borderRadius: 20,
@@ -192,7 +199,44 @@ const MainScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
+      <View
+        style={{
+          width: '100%',
+          position: 'absolute',
+          bottom: 0,
+          // marginBottom: 30,
+          height: 80,
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          backgroundColor: '#34568B',
+        }}
+      >
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('MainScreen')}
+          style={{ alignItems: 'center' }}
+        >
+          <AntDesign name='message1' size={24} color='white' />
+          <Text style={{ color: 'white' }}>Message</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{ alignItems: 'center' }}
+          onPress={() => props.navigation.navigate('PhoneScreen')}
+        >
+          <AntDesign name='phone' size={24} color='white' />
+          <Text style={{ color: 'white' }}>Phone</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{ alignItems: 'center' }}
+          onPress={() => props.navigation.navigate('PhoneScreen')}
+        >
+          <Entypo name='text-document' size={24} color='white' />
+          <Text style={{ color: 'white' }}>Report</Text>
+        </TouchableOpacity>
+      </View>
     </ScrollView>
+
+    // </View>
   );
 };
 

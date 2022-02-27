@@ -2,7 +2,7 @@
 
 ## I. Introduction
     A mobile application to help detect SMS scams and frauds using Natural Language Processing model.
-<br><br>
+
 
 ## II. Fraud detection flow
     
@@ -12,7 +12,6 @@
 4. Text file is then parsed to NLP model.
 5. Sever send result to user.
 
-<br>
 
 ## III. Application features:
 1. **Scam Detection**: utilizing AI to detect scam message, dection model is trained on `kaggle SMS spam` dataset (5000 entries), achieve `98%` accuracy on `train,test` split of `80/20`.  
